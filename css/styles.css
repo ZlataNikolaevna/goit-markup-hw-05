@@ -71,11 +71,6 @@ img{
 /* шапка */
 .header{
     border-bottom: 1px solid var(--header-border-color);
-    position: fixed;
-    background-color: var(--accent-primary-color);
-    top: 0;
-    width: 100%;
-    z-index: 2;
 }
 .header .logo{
     margin-right: 93px;
