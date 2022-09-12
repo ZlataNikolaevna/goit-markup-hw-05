@@ -102,7 +102,7 @@ img{
     padding-top: 32px;
     padding-bottom: 32px;
     color: var(--text-secondary-color);
-    transition: var(--anima-timing);
+    transition: color var(--anima-timing);
 }
 .nav-contacts{
     display: flex;
@@ -110,7 +110,7 @@ img{
     padding-top: 32px;
     padding-bottom: 32px;
     color: var(--text-primary-color);
-    transition: var(--anima-timing);
+    transition: color var(--anima-timing);
 }
 .nav-item:hover,
 .nav-item:focus,
@@ -124,7 +124,6 @@ img{
 .icon-header{
     margin-right: 10px;
     fill: currentColor;
-    transition: var(--anima-timing);
 }
 .nav-item.current::after{
     content: '';
@@ -179,7 +178,7 @@ img{
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: var(--anima-timing);
+    transition: background-color var(--anima-timing);
 }
 .hero-button:hover,
 .hero-button:focus{
@@ -228,10 +227,10 @@ img{
     padding: 6px;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--accent-primary-color);
 }
 .modal-icon{
     fill: var(--text-secondary-color);
-    transition: var(--anima-timing);
 }
 /* инструменты */
 .instruments{
@@ -308,6 +307,7 @@ img{
     display: flex;
     bottom: 27px;
     right: 84px;
+    margin-top: 0;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
@@ -366,7 +366,7 @@ img{
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    transition: var(--anima-timing);
+    transition: background-color var(--anima-timing), fill var(--anima-timing); 
 }
 .team-social-link:hover,
 .team-social-link:focus{
@@ -393,18 +393,17 @@ img{
     color: var(--icon-color);       
     border: 1px solid var(--icon-color);
     border-radius: 4px;
-    transition: var(--anima-timing);
+    transition: color var(--anima-timing), border-color var(--anima-timing);
 }
 .client-icon-item:hover,
 .client-icon-item:focus{
     color: var(--accent-secondary-color);
-    border: 1px solid var(--accent-secondary-color);
+    border-color: var(--accent-secondary-color);
 }
 .icon-client{
     width: 106px;
     height: 60px;
     fill: currentColor;
-    transition: var(--anima-timing);
 }
 
 /* портфолио */
@@ -435,7 +434,7 @@ img{
     background-color: var(--accent-background-color);
     border-radius: 4px;
     border: none;
-    transition: var(--anima-timing);
+    transition: color var(--anima-timing), background-color var(--anima-timing), box-shadow var(--anima-timing);
 }
 .filter-button:hover,
 .filter-button:focus{
@@ -457,7 +456,7 @@ img{
 .project-item{
     display: block;
     text-decoration: none;
-    transition: var(--anima-timing);    
+    transition: box-shadow var(--anima-timing);    
 }
 .project-item:hover,
 .project-item:focus{
@@ -491,30 +490,22 @@ img{
 .project-thumb{
     position: relative; 
     overflow: hidden;
-    transition: var(--anima-timing);
 }
-.project-item:hover .project-description{
-    opacity: 1;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.project-thumb::before{
-    display: inline-block;
+.project-overlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
+    top: 0;
+    left: 0;
     content: '';
     width: 100%;
     height: 100%;
     background-color: var(--project-overlay);
     transform: translateY(100%);
-    transition: transform 250ms;
+    transition: var(--anima-timing);    
 }
-.project-item:hover .project-thumb::before{
-    transform: translateY(0);
-} 
 .project-description{
-    position: absolute;
-    display: flex;
-    top: 0;
     margin: 0;
     padding: 63px 24px;
     font-weight: 400;
@@ -522,7 +513,10 @@ img{
     line-height: 1.56;
     letter-spacing: 0.03em;
     color: var(--accent-primary-color);
-    opacity: 0;
+}
+.project-card:hover .project-overlay,
+.progect-card:focus .project-overlay{
+    transform: translateY(0);
 }
 
 /* подвал */
@@ -549,12 +543,12 @@ img{
     color: var(--accent-primary-color);
     list-style: none;
     font-style: normal;
-    transition: var(--anima-timing);
+    transition: color var(--anima-timing);
 }
 .footer-contacts{
     color: var(--footer-contacts-color);
     font-style: normal;
-    transition: var(--anima-timing);
+    transition: color var(--anima-timing);
 }
 .address:hover,
 .footer-contacts:hover,
@@ -584,10 +578,9 @@ img{
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    transition: var(--anima-timing);
+    transition: background-color var(--anima-timing);
 }
 .footer-social-link:hover,
 .footer-social-link:focus{
     background-color: var(--accent-secondary-color);
-    fill: var(--accent-primary-color);
 }
